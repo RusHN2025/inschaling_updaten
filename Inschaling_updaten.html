@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inschaling Updaten Flexwerker - Instructie & Quiz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background: #f5f6fa;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+        }
+
+        header h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+        }
+
+        section {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 2.2em;
+            color: #007bff;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+        }
+        
+        .section-title-alt {
+            font-size: 1.8em;
+            color: #0069d9; 
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 4px solid #0069d9;
+            padding-left: 10px;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            color: #0056b3;
+            margin: 25px 0 15px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        h3::before {
+            content: "📋";
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+        
+        h4 {
+            font-size: 1.2em;
+            color: #495057;
+            margin: 20px 0 10px 0;
+            font-weight: 600;
+        }
+
+        p, li {
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+
+        ul {
+            margin: 15px 0 15px 25px;
+        }
+        
+        ul.fields-list li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+            border-left: 3px solid #007bff;
+            background-color: #f8f9fa;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 4px;
+        }
+        ul.fields-list strong {
+            color: #0056b3;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .concept-box {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-left: 5px solid #007bff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .concept-box h4 {
+            color: #0056b3;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .concept-box h4::before {
+            content: "💡";
+            margin-right: 8px;
+        }
+
+        .step-container {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            background: #007bff;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            box-shadow: 0 3px 8px rgba(0, 123, 255, 0.3);
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: 600;
+            color: #856404;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-left: 5px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .warning-box strong {
+             color: #856404;
+        }
+        
+        .warning-box ul {
+            margin-top:10px;
+            margin-bottom: 0;
+        }
+
+        .warning-box::before {
+            content: "⚠️ ";
+            font-weight: bold;
+            color: #856404;
+        }
+        
+        .info-box {
+            background: #e2f3ff;
+            border: 1px solid #b8dfff;
+            border-left: 5px solid #007bff;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .info-box strong {
+            color: #004085;
+        }
+        .info-box::before {
+            content: "ℹ️ ";
+            font-weight: bold;
+            color: #004085;
+        }
+
+        .screenshot-placeholder {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .screenshot-placeholder img {
+            max-width: 100%;
+            max-height: 500px;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            object-fit: contain;
+        }
+
+        .screenshot-placeholder::before {
+            content: "📷";
+            font-size: 2rem;
+            opacity: 0.2;
+            position: absolute;
+            z-index: 0;
+        }
+
+        .screenshot-placeholder:has(img)::before {
+            display: none;
+        }
+
+        .screenshot-description {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            z-index: 2;
+            opacity: 0.8;
+            font-weight: 500;
+        }
+
+        .quiz {
+            display: none;
+        }
+
+        .quiz.active {
+            display: block;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .options button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            margin: 8px 0;
+            padding: 15px 20px;
+            font-size: 1.05em;
+            color: white;
+            background: #007bff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+        }
+
+        .options button:hover {
+            transform: translateY(-2px) translateX(2px);
+            box-shadow: 0 6px 16px rgba(0, 123, 255, 0.3);
+        }
+
+        .options button.correct {
+            background: #28a745 !important;
+            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+        }
+
+        .options button.wrong {
+            background: #dc3545 !important;
+            box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+        }
+
+        .options button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .feedback {
+            font-size: 2em;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .feedback.good {
+            color: #28a745;
+        }
+
+        .feedback.wrong {
+            color: #dc3545;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .navigation button {
+            padding: 12px 25px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 0 10px;
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+        }
+
+        .navigation button:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+        
+        .results-section {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .results-section p {
+            font-size: 1.8em;
+            margin: 20px 0;
+            color: #495057;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+        <header>
+            <h1>Inschaling updaten flexwerker</h1>
+            <p>💰 Instructiegids: Loonsverhoging en plaatsing bijwerken</p>
+        </header>
+
+    <!-- Instructie Sectie -->
+    <section class="instruction-section">
+        <h2 class="section-title-alt">💼 Stappen voor het updaten van inschaling en plaatsingen</h2>
+        
+        <div class="concept-box">
+            <h4>Waarom is het belangrijk om inschaling en plaatsingen bij te werken?</h4>
+            <p>Wanneer je met een flexwerker spreekt over een loonsverhoging en zijn/haar inschaling wijzigt (verhoogt), is het essentieel om ook de actieve plaatsingen aan te passen. Dit voorkomt dat:
+                <ul>
+                    <li>Declaraties nog gebaseerd zijn op de oude inschaling</li>
+                    <li>Er fouten ontstaan in de loonadministratie</li>
+                    <li>De flexwerker incorrect wordt vergoed</li>
+                    <li>Administratieve problemen ontstaan bij de opdrachtgever</li>
+                </ul>
+            De inschaling in de plaatsing bevat nog de oude waardes. Door de plaatsing te updaten vanaf de datum waarop de nieuwe loonsverhoging ingaat, zorg je ervoor dat de correcte gegevens gebruikt worden.
+            </p>
+        </div>
+
+        <h2 class="section-title-alt">📊 Stap 1: Nieuwe inschaling invoeren</h2>
+
+        <div class="step-container">
+            <div class="step-number">1</div>
+            <h3>Flexwerkerprofiel openen</h3>
+            <h4>🎯 Doel</h4>
+            <p>Toegang krijgen tot het profiel van de flexwerker waar de inschaling moet worden aangepast.</p>
+            
+            <h4>📝 Acties</h4>
+            <ul>
+                <li>Open het profiel van de flexwerker in HappyOne.</li>
+                <li>Zorg ervoor dat je in het juiste profiel bent door de naam en gegevens te controleren.</li>
+            </ul>
+        </div>
+
+        <div class="step-container">
+            <div class="step-number">2</div>
+            <h3>Inschaling tabblad selecteren</h3>
+            <h4>🎯 Doel</h4>
+            <p>Het juiste tabblad vinden waar de inschaling beheerd kan worden.</p>
+            
+            <h4>📝 Acties</h4>
+            <ul>
+                <li>Ga naar het tabblad <span class="highlight">'Contracten'</span> in het flexwerkerprofiel.</li>
+                <li>Je ziet nu een overzicht van de huidige contractgegevens.</li>
+            </ul>
+        </div>
+
+        <div class="step-container">
+            <div class="step-number">3</div>
+            <h3>Inschaling toevoegen</h3>
+            <h4>🎯 Doel</h4>
+            <p>Een nieuwe inschaling toevoegen die overeenkomt met de loonsverhoging.</p>
+            
+            <h4>📝 Acties</h4>
+            <ul>
+                <li>Klik op de knop <span class="highlight">'Inschaling toevoegen'</span>.</li>
+                <li>Voer de nieuwe inschalingsgegevens in die overeenkomen met de loonsverhoging.</li>
+                <li>Controleer of alle velden correct zijn ingevuld.</li>
+                <li>Sla de wijzigingen op door op <span class="highlight">'Opslaan'</span> te klikken.</li>
+            </ul>
+            
+            <div class="screenshot-placeholder">
+                <img src="Voorbeelden/inschaling_updaten.gif" alt="Inschaling updaten proces">
+                <div class="screenshot-description">
+                    Animatie van het proces voor het updaten van de inschaling van een flexwerker.
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title-alt">📋 Stap 2: Actieve plaatsingen bijwerken</h2>
+
+        <div class="step-container">
+            <div class="step-number">1</div>
+            <h3>Plaatsingen tabblad openen</h3>
+            <h4>🎯 Doel</h4>
+            <p>Toegang krijgen tot de actieve plaatsingen die moeten worden bijgewerkt.</p>
+            
+            <h4>📝 Acties</h4>
+            <ul>
+                <li>Open het tabblad <span class="highlight">'Plaatsingen'</span> in het profiel van de flexwerker.</li>
+                <li>Je ziet nu een overzicht van alle actieve en historische plaatsingen.</li>
+            </ul>
+        </div>
+
+        <div class="step-container">
+            <div class="step-number">2</div>
+            <h3>Betreffende plaatsing selecteren</h3>
+            <h4>🎯 Doel</h4>
+            <p>De juiste plaatsing vinden die moet worden aangepast voor de nieuwe inschaling.</p>
+            
+            <h4>📝 Acties</h4>
+            <ul>
+                <li>Zoek de betreffende plaatsing die je wilt aanpassen.</li>
+                <li>Controleer of dit de actieve plaatsing is die beïnvloed wordt door de loonsverhoging.</li>
+                <li>Klik op <span class="highlight">'Wijzigen'</span> bij de geselecteerde plaatsing.</li>
+            </ul>
+        </div>
+
+        <div class="step-container">
+            <div class="step-number">3</div>
+            <h3>Datum en concept plaatsing genereren</h3>
+            <h4>🎯 Doel</h4>
+            <p>Een nieuwe plaatsing genereren vanaf de datum waarop de loonsverhoging ingaat.</p>
+            
+            <h4>📝 Acties</h4>
+            <ul>
+                <li>Selecteer de datum vanaf wanneer de nieuwe loonsverhoging moet ingaan.</li>
+                <li>Genereer een concept plaatsing vanaf de geselecteerde datum.</li>
+                <li>Het systeem maakt automatisch een nieuwe plaatsing aan met de bijgewerkte gegevens.</li>
+            </ul>
+            
+            <div class="screenshot-placeholder">
+                <img src="Voorbeelden/plaatsing_update.gif" alt="Plaatsing update proces">
+                <div class="screenshot-description">
+                    Animatie van het proces voor het bijwerken van een plaatsing met nieuwe inschalingsgegevens.
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title-alt">🔄 Stap 3: Herberekenen en bevestigen</h2>
+
+        <div class="step-container">
+            <div class="step-number">1</div>
+            <h3>Plaatsing herberekenen</h3>
+            <h4>🎯 Doel</h4>
+            <p>De plaatsing updaten met de nieuwe inschalingsgegevens door herberekening.</p>
+            
+            <h4>📝 Acties</h4>
+            <ul>
+                <li>Klik op <span class="highlight">'Herberekenen'</span>.</li>
+                <li>Dit zorgt ervoor dat de plaatsing wordt geüpdatet met de nieuwe inschaling.</li>
+                <li>Het systeem past automatisch alle relevante tarieven en gegevens aan.</li>
+                <li><strong>Belangrijk:</strong> Controleer wel of de inschaling van de klant niet hoger is. Als hun inlenersbeloning namelijk hoger is, dan moeten wij hun hogere schaal aannemen.</li>
+            </ul>
+        </div>
+
+        <div class="step-container">
+            <div class="step-number">2</div>
+            <h3>Gegevens controleren en bevestigen</h3>
+            <h4>🎯 Doel</h4>
+            <p>De bijgewerkte gegevens verifiëren en definitief bevestigen.</p>
+            
+            <h4>📝 Acties</h4>
+            <ul>
+                <li>Controleer alle gegevens zorgvuldig om er zeker van te zijn dat alles correct is.</li>
+                <li>Verifieer de nieuwe tarieven, datums en inschalingsgegevens.</li>
+                <li>Als alles correct is, klik op <span class="highlight">'Bevestigen'</span>.</li>
+                <li>Vanaf dat moment worden de nieuwe inschalingswaarden gebruikt voor declaraties.</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <strong>Resultaat:</strong> De inschaling en plaatsingen zijn succesvol bijgewerkt. Alle toekomstige declaraties zullen gebaseerd zijn op de nieuwe inschalingsgegevens vanaf de opgegeven datum. De flexwerker ontvangt nu de correcte vergoeding volgens de nieuwe inschaling.
+        </div>
+
+        <div class="warning-box">
+            <strong>Belangrijke aandachtspunten:</strong>
+            <ul>
+                <li>Zorg ervoor dat de ingangsdatum van de loonsverhoging correct is ingesteld.</li>
+                <li>Controleer altijd of alle actieve plaatsingen zijn bijgewerkt.</li>
+                <li>Verifieer de nieuwe tarieven voordat je bevestigt.</li>
+                <li>Communiceer de wijzigingen tijdig naar de flexwerker en opdrachtgever.</li>
+                <li>Bewaar documentatie van de inschalingswijziging voor administratieve doeleinden.</li>
+                <li>Monitor de eerste declaraties na de wijziging om correctheid te waarborgen.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Quiz Sectie -->
+    <section id="quiz-section">
+        <h2>🎯 Toets je Kennis</h2>
+        <div id="quiz-1" class="quiz active">
+            <div class="question">Waarom is het belangrijk om plaatsingen bij te werken na een inschalingswijziging?</div>
+            <div class="options">
+                <button onclick="handleQuizAnswer(this, true)">Om te voorkomen dat declaraties nog gebaseerd zijn op de oude inschaling en er fouten ontstaan in de loonadministratie.</button>
+                <button onclick="handleQuizAnswer(this, false)">Om de flexwerker te informeren over de loonsverhoging.</button>
+            </div>
+            <div id="feedback-quiz-1" class="feedback"></div>
+            <div class="navigation">
+                <button onclick="nextQuiz(2)">Volgende Vraag</button>
+            </div>
+        </div>
+
+        <div id="quiz-2" class="quiz">
+            <div class="question">In welke volgorde voer je de stappen uit?</div>
+            <div class="options">
+                <button onclick="handleQuizAnswer(this, false)">Eerst plaatsingen bijwerken, dan inschaling toevoegen.</button>
+                <button onclick="handleQuizAnswer(this, true)">Eerst inschaling toevoegen, dan plaatsingen bijwerken.</button>
+            </div>
+            <div id="feedback-quiz-2" class="feedback"></div>
+            <div class="navigation">
+                <button onclick="prevQuiz(1)">Vorige Vraag</button>
+                <button onclick="nextQuiz(3)">Volgende Vraag</button>
+            </div>
+        </div>
+        
+        <div id="quiz-3" class="quiz">
+            <div class="question">Wat doe je na het genereren van een concept plaatsing?</div>
+            <div class="options">
+                <button onclick="handleQuizAnswer(this, true)">Klik op 'Herberekenen' om de plaatsing te updaten met de nieuwe inschaling, controleer de gegevens en klik op 'Bevestigen'.</button>
+                <button onclick="handleQuizAnswer(this, false)">Direct opslaan zonder verdere controle.</button>
+            </div>
+            <div id="feedback-quiz-3" class="feedback"></div>
+            <div class="navigation">
+                <button onclick="prevQuiz(2)">Vorige Vraag</button>
+                <button onclick="nextQuiz(4)">Volgende Vraag</button>
+            </div>
+        </div>
+        
+        <div id="quiz-4" class="quiz">
+            <div class="question">Vanaf wanneer worden de nieuwe inschalingswaarden gebruikt voor declaraties?</div>
+            <div class="options">
+                <button onclick="handleQuizAnswer(this, false)">Vanaf het moment dat je de inschaling toevoegt.</button>
+                <button onclick="handleQuizAnswer(this, true)">Vanaf de datum die je selecteert bij het genereren van de concept plaatsing en na bevestiging.</button>
+            </div>
+            <div id="feedback-quiz-4" class="feedback"></div>
+            <div class="navigation">
+                <button onclick="prevQuiz(3)">Vorige Vraag</button>
+                <button onclick="showResults()">Toon Resultaten</button>
+            </div>
+        </div>
+        
+        <div id="results" class="quiz">
+            <div class="results-section">
+                <h3>🏆 Quiz Resultaten</h3>
+                <p id="score-display"></p>
+                <p id="performance-message"></p>
+                <div class="navigation">
+                    <button onclick="restartQuiz()">Opnieuw Proberen</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    let currentQuiz = 1;
+    let score = 0;
+    let totalQuestions = 4;
+    let answeredQuestions = [];
+
+    function handleQuizAnswer(button, isCorrect) {
+        const allButtons = button.parentElement.querySelectorAll('button');
+        const feedback = document.getElementById(`feedback-quiz-${currentQuiz}`);
+        
+        // Disable all buttons
+        allButtons.forEach(btn => btn.disabled = true);
+        
+        // Mark correct/wrong answers
+        if (isCorrect) {
+            button.classList.add('correct');
+            feedback.textContent = '✅ Correct!';
+            feedback.className = 'feedback good';
+            if (!answeredQuestions.includes(currentQuiz)) {
+                score++;
+                answeredQuestions.push(currentQuiz);
+            }
+        } else {
+            button.classList.add('wrong');
+            // Find and highlight the correct answer
+            allButtons.forEach(btn => {
+                if (btn.onclick.toString().includes('true')) {
+                    btn.classList.add('correct');
+                }
+            });
+            feedback.textContent = '❌ Fout! Het juiste antwoord is gemarkeerd.';
+            feedback.className = 'feedback wrong';
+            if (!answeredQuestions.includes(currentQuiz)) {
+                answeredQuestions.push(currentQuiz);
+            }
+        }
+    }
+
+    function nextQuiz(quizNumber) {
+        document.getElementById(`quiz-${currentQuiz}`).classList.remove('active');
+        document.getElementById(`quiz-${quizNumber}`).classList.add('active');
+        currentQuiz = quizNumber;
+    }
+
+    function prevQuiz(quizNumber) {
+        document.getElementById(`quiz-${currentQuiz}`).classList.remove('active');
+        document.getElementById(`quiz-${quizNumber}`).classList.add('active');
+        currentQuiz = quizNumber;
+    }
+
+    function showResults() {
+        document.getElementById(`quiz-${currentQuiz}`).classList.remove('active');
+        document.getElementById('results').classList.add('active');
+        
+        const percentage = Math.round((score / totalQuestions) * 100);
+        document.getElementById('score-display').textContent = `Je hebt ${score} van de ${totalQuestions} vragen correct beantwoord (${percentage}%)`;
+        
+        let message = '';
+        if (percentage >= 80) {
+            message = '🎉 Uitstekend! Je beheerst het proces van inschaling updaten goed.';
+        } else if (percentage >= 60) {
+            message = '👍 Goed gedaan! Je hebt de basis onder de knie, maar er is nog ruimte voor verbetering.';
+        } else {
+            message = '📚 Je kunt nog wat oefenen. Lees de instructies nog eens door en probeer opnieuw.';
+        }
+        
+        document.getElementById('performance-message').textContent = message;
+    }
+
+    function restartQuiz() {
+        // Reset variables
+        currentQuiz = 1;
+        score = 0;
+        answeredQuestions = [];
+        
+        // Reset all quizzes
+        for (let i = 1; i <= totalQuestions; i++) {
+            const quiz = document.getElementById(`quiz-${i}`);
+            const buttons = quiz.querySelectorAll('button');
+            const feedback = document.getElementById(`feedback-quiz-${i}`);
+            
+            buttons.forEach(btn => {
+                btn.disabled = false;
+                btn.classList.remove('correct', 'wrong');
+            });
+            
+            feedback.textContent = '';
+            feedback.className = 'feedback';
+            
+            quiz.classList.remove('active');
+        }
+        
+        // Hide results and show first quiz
+        document.getElementById('results').classList.remove('active');
+        document.getElementById('quiz-1').classList.add('active');
+    }
+</script>
+
+</body>
+</html>
